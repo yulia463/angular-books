@@ -17,12 +17,12 @@ export class AppComponent implements OnInit {
   products$: Observable<Array<IProduct>>;
   term = '';
 
-  constructor(private productsService: ProductService) {
+  constructor(private produсtsService: ProductService) {
   }
 
   ngOnInit(): void {
     this.loading = true;
-    this.products$ = this.productsService.getALl().pipe(
+    this.products$ = this.produсtsService.getALl().pipe(
       tap(() => this.loading = false)
     );
   }
