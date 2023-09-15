@@ -1,0 +1,10 @@
+{
+  "defaultProject" : "angular-books",
+  "projects": {
+    "angular-books": {
+      "name": "angular-books",
+      "integrations": {},
+      "type": "angular"
+    }
+  }
+}
