@@ -1,9 +1,11 @@
 {
-  "defaultProject" : "angular-books",
+  "defaultProject": "angular-books",
   "projects": {
     "angular-books": {
       "name": "angular-books",
-      "integrations": {},
+      "integrations": {
+        "capacitor": {}
+      },
       "type": "angular"
     }
   }
