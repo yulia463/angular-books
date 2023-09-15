@@ -7,6 +7,7 @@ import {ProductComponent} from './components/product/product.component';
 import {CommonModule} from '@angular/common';
 import {HttpClientModule} from '@angular/common/http';
 import {GlobalErrorComponent} from './components/global-error/global-error.component';
+import { IonicModule } from '@ionic/angular';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import {GlobalErrorComponent} from './components/global-error/global-error.compo
     AppRoutingModule,
     CommonModule,
     HttpClientModule,
+    IonicModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
