@@ -1,12 +1,10 @@
 export interface IProduct {
   id: number;
   title: string;
-  price: number;
+  author: string;
   description: string;
-  category: string;
+  genre: string;
+  language: string;
+  pages: number;
   image: string;
-  rating: {
-    rate: number;
-    count: number;
-  };
 }
