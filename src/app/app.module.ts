@@ -7,13 +7,16 @@ import {ProductComponent} from './components/product/product.component';
 import {CommonModule} from '@angular/common';
 import {HttpClientModule} from '@angular/common/http';
 import {GlobalErrorComponent} from './components/global-error/global-error.component';
-import { IonicModule } from '@ionic/angular';
+import {IonicModule} from '@ionic/angular';
+import {FormsModule} from "@angular/forms";
+import {FilterProductsPipe} from './pipes/filter-products.pipe'
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductComponent,
     GlobalErrorComponent,
+    FilterProductsPipe
   ],
   imports: [
     BrowserModule,
@@ -21,6 +24,7 @@ import { IonicModule } from '@ionic/angular';
     CommonModule,
     HttpClientModule,
     IonicModule.forRoot(),
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
