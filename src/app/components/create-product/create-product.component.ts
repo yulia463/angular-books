@@ -51,6 +51,7 @@ import {products} from "src/app/data/products";
 
 export class CreateProductComponent implements OnInit {
   selectedAuthor: string = '';
+  selectedLanguage: string = '';
   newBook: IProduct = {
     id: 0,
     title: '',
@@ -63,7 +64,7 @@ export class CreateProductComponent implements OnInit {
   };
 
   authors: string[] = [];
-
+  languages: string[] = [];
   constructor(
     private productService: ProductsService,
     private modalService: ModalService
@@ -71,10 +72,15 @@ export class CreateProductComponent implements OnInit {
 
   ngOnInit(): void {
     this.authors = this.productService.getAuthors();
+    this.languages = this.productService.getLanguages();
   }
 
   onSubmit() {
     this.newBook.author = this.selectedAuthor;
+    console.log(this.selectedAuthor,"selectedAuuthoe")
+
+    this.newBook.language = this.selectedLanguage;
+    console.log(this.selectedLanguage,"selectedLanguage")
 
     products.unshift(this.newBook);
     this.newBook = {

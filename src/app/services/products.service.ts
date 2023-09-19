@@ -66,9 +66,17 @@ export class ProductsService {
       uniqueAuthors.add(product.author);
     });
 
-    return Array.from(uniqueAuthors); // Преобразуйте Set в массив строк
+    return Array.from(uniqueAuthors);
   }
+  getLanguages(): string[] {
+    const uniqueLanguages = new Set<string>();
 
+    this.products.forEach((product) => {
+      uniqueLanguages.add(product.language);
+    });
+
+    return Array.from(uniqueLanguages);
+  }
   private errorHandler(error: any) {
     this.errorService.handle(error.message);
     return throwError(() => error.message);
