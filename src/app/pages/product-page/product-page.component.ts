@@ -17,9 +17,9 @@ export class ProductPageComponent {
   description = '';
   // authors: string[];
   // languages: string[];
-  // minPages: number;
-  // maxPages: number;
-  // genre: string;
+  minPages: number;
+  maxPages: number;
+  genre: string;
 
   constructor(
     public productsService: ProductsService,
