@@ -6,8 +6,9 @@ import {IProduct} from "../models/product";
 })
 export class FilterProductsPipe implements PipeTransform {
 
-  transform(products: IProduct[], search: string, descriptionSearch: string, minPages: number, maxPages: number): IProduct[] {
+  transform(products: IProduct[], search: string, descriptionSearch: string, minPages: number, maxPages: number, genre: string): IProduct[] {
     console.log('search', search, 'descri', descriptionSearch)
+    console.log(genre)
     let result = products;
     if (search.length > 0) {
       result = products.filter(p => p.title.toLowerCase().includes(search.toLowerCase()));
@@ -22,6 +23,9 @@ export class FilterProductsPipe implements PipeTransform {
 
     if (!isNaN(maxPages)) {
       result = result.filter(p => p.pages <= maxPages);
+    }
+    if (genre) {
+      result = result.filter(p => p.genre.includes(genre));
     }
 
     return result;

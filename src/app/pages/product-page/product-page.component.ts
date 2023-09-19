@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {ProductsService} from "../../services/products.service";
 import {ModalService} from "../../services/modal.service";
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-product-page',
