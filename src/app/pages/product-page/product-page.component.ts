@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import {ProductsService} from "../../services/products.service";
 import {ModalService} from "../../services/modal.service";
 import { FormsModule } from '@angular/forms';
+import {IDropdownSettings} from "ng-multiselect-dropdown";
+import {authors} from "src/app/data/authors";
+import {languages} from "src/app/data/languages";
 
 @Component({
   selector: 'app-product-page',
@@ -10,17 +13,16 @@ import { FormsModule } from '@angular/forms';
 })
 export class ProductPageComponent {
   title = 'angular app';
-
-  // products: Array<IProduct> = [];
   loading = false;
-  //products$: Observable<Array<IProduct>>;
   term = '';
   description = '';
-  // authors: string[];
-  // languages: string[];
   minPages: number;
   maxPages: number;
   genre: string;
+  dropdownList: any = [];
+  selectedAuthors: any = [];
+  selectedLanguages: any = [];
+  dropdownSettings: IDropdownSettings = {};
 
   constructor(
     public productsService: ProductsService,
@@ -30,11 +32,27 @@ export class ProductPageComponent {
 
   ngOnInit(): void {
     this.loading = true;
-    // this.products$ = this.produсtsService.getALl().pipe(
-    //   tap(() => this.loading = false)
-    // );
     this.productsService.getAll().subscribe(() => {
       this.loading = false
     })
+    this.dropdownList = authors;
+    this.dropdownSettings = {
+      singleSelection: false,
+      idField: 'name',
+      textField: 'name',
+      selectAllText: 'Select All',
+      unSelectAllText: 'UnSelect All',
+      itemsShowLimit: 3,
+      allowSearchFilter: true
+    };
+    this.dropdownList = languages;
+
   }
+
+  onItemSelect(item: any) {
+  }
+
+  onSelectAll(items: any) {
+  }
+
 }
