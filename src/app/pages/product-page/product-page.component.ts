@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import {ProductsService} from "../../services/products.service";
 import {ModalService} from "../../services/modal.service";
-import { FormsModule } from '@angular/forms';
 import {IDropdownSettings} from "ng-multiselect-dropdown";
 import {authors} from "src/app/data/authors";
 import {languages} from "src/app/data/languages";
@@ -19,7 +18,8 @@ export class ProductPageComponent {
   minPages: number;
   maxPages: number;
   genre: string;
-  dropdownList: any = [];
+  dropdownAuthorList: any = [];
+  dropdownLanguageList: any = [];
   selectedAuthors: any = [];
   selectedLanguages: any = [];
   dropdownSettings: IDropdownSettings = {};
@@ -35,7 +35,7 @@ export class ProductPageComponent {
     this.productsService.getAll().subscribe(() => {
       this.loading = false
     })
-    this.dropdownList = authors;
+    this.dropdownAuthorList = authors;
     this.dropdownSettings = {
       singleSelection: false,
       idField: 'name',
@@ -45,7 +45,7 @@ export class ProductPageComponent {
       itemsShowLimit: 3,
       allowSearchFilter: true
     };
-    this.dropdownList = languages;
+    this.dropdownLanguageList = languages;
 
   }
 
