@@ -3,10 +3,16 @@
   <label class="label" for="title">Название:</label>
   <input class="inputForm" type="text" id="title" [(ngModel)]="newBook.title" name="title" required>
 
-  <label for="author">Автор:</label>
-  <input class="inputForm" type="text" id="author" [(ngModel)]="newBook.author" name="author" required>
+<!--  <label for="author">Автор:</label>-->
+<!--  <input class="inputForm" type="text" id="author" [(ngModel)]="newBook.author" name="author" required>-->
 
-  <label for="description">Описание:</label>
+    <label for="author">Автор:</label>
+    <select class="author" id="author" [(ngModel)]="selectedAuthor" name="author" required>
+      <option *ngFor="let author of authors" [value]="author">{{ author }}</option>
+    </select>
+
+
+    <label for="description">Описание:</label>
   <input class="inputForm" type="text" id="description" [(ngModel)]="newBook.description" name="description" required>
 
   <label for="pages"> Число страниц:</label>
