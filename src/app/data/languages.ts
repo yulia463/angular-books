@@ -6,5 +6,3 @@ export const languages: Array<ILanguage> = [
   {name: "Испанский"},
   {name: "Французский"},
 ]
-
-
