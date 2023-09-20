@@ -11,13 +11,13 @@ import {languages} from "src/app/data/languages";
   styleUrls: ['./product-page.component.scss']
 })
 export class ProductPageComponent {
-  title = 'angular app';
+  title = 'Список книг';
   loading = false;
   term = '';
   description = '';
   minPages: number;
   maxPages: number;
-  genre: string;
+  genre: string = '';
   dropdownAuthorList: any = [];
   dropdownLanguageList: any = [];
   selectedAuthors: any = [];
